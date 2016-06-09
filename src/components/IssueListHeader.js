@@ -23,21 +23,11 @@ class IssueListHeader extends Component {
   }
 
   onChangeAssigneeFilter(user) {
-    if (this.isAssigneeFilter(user)) {
-      this.props.onChangeAssigneeFilter(null)
-    } else {
-      this.props.onChangeAssigneeFilter(user)
-      this.onChangeAssigneeModal(false)
-    }
+    // TODO: implement
   }
 
   onChangeLabelFilter(label) {
-    if (this.isLabelFilter(label)) {
-      this.props.onChangeLabelFilter(null)
-    } else {
-      this.props.onChangeLabelFilter(label)
-      this.onChangeLabelModal(false)
-    }
+    // TODO: implement
   }
 
   onChangeAssigneeModal(show) {
