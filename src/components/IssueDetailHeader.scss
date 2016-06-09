@@ -1,0 +1,89 @@
+.base {
+  border-bottom: 1px solid DarkGray;
+  margin-bottom: 10px;
+}
+
+.state {
+  color: #fff;
+  height: 26px;
+  line-height: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 10px;
+  i {
+    margin-right: 6px;
+    font-size: 14px;
+  }
+}
+
+.state-open {
+  composes: state;
+  background: #6CC644;
+}
+
+.state-close {
+  composes: state;
+  background: #9DA0A4;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 80%;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  word-break: break-all;
+
+  input {
+    width: 100%;
+    font-size: 20px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: solid 1px #e3e3e3;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+.edit-button {
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  color: DarkGray;
+  cursor: pointer;
+  position: absolute;
+  right: -20%;
+  top: 10px;
+}
+
+.assign-label-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.item-labels {
+  flex: 1;
+  font-size: 14px;
+  color: #9DA0A4;
+  margin-top: 10px;
+}
+
+.items {
+  flex: 1;
+  font-size: 18px;
+  color: DimGray;
+  margin-top: 5px;
+}

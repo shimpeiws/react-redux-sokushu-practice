@@ -1,0 +1,23 @@
+.base {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  padding: 0
+}
+
+.item {
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

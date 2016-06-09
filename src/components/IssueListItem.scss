@@ -1,0 +1,34 @@
+.outer {
+  :hover {
+    background: Azure;
+    cursor: pointer;
+  }
+}
+
+.base {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  border-bottom: 1px solid LightGray;
+  padding: 10px 0;
+}
+
+.base-row {
+  align-items: center;
+  text-align: center;
+}
+
+.row {
+  composes: base-row;
+  flex: 1;
+}
+
+.row-2 {
+  composes: base-row;
+  flex: 2;
+}
+
+.row-3 {
+  composes: base-row;
+  flex: 3;
+}

@@ -1,0 +1,78 @@
+.base {
+  border: 1px solid DarkGray;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.header {
+  background-color: LightGray;
+  padding: 10px 10px;
+  display: flex;
+}
+
+.header-name {
+  flex: 4;
+  font-weight: 600;
+}
+
+.header-date {
+  flex: 12;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.actions {
+  flex: 2;
+  text-align: right;
+}
+
+.header-icon {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.main {
+  background-color: white;
+  padding: 10px 10px;
+  overflow: hidden;
+
+  textarea {
+    width: 100%;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: solid 1px #e3e3e3;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+.buttons {
+  width: 300px;
+  margin-top: 10px;
+  float: right;
+  text-align: right;
+  overflow: hidden;
+}
+
+.cancel-button {
+  float: right;
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  border: 1px solid DarkGray;
+  border-radius: 3px;
+  text-align: center;
+  margin-left: 15px;
+  background: red;
+  color: white;
+  cursor: pointer;
+  display: block;
+}
+
+.comment-button {
+  composes: cancel-button;
+  background: green;
+}

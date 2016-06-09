@@ -1,0 +1,78 @@
+.base {
+  border: 1px solid DarkGray;
+  border-radius: 3px;
+  margin-top: 30px;
+}
+
+.header {
+  background-color: LightGray;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.input-label {
+  font-weight: 600;
+}
+
+.user-input {
+  margin-left: 30px;
+}
+
+.main {
+  background-color: white;
+  padding: 10px 10px;
+}
+
+.comment-text {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  rows: 10px;
+  font-size: 15px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.close-issue-button {
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  border: 1px solid DarkGray;
+  border-radius: 3px;
+  text-align: center;
+  margin-right: 15px;
+  background: #eee;
+  cursor: pointer;
+  display: block;
+}
+
+.comment-button {
+  composes: close-issue-button;
+  background: green;
+  color: white;
+}
+
+textarea, input {
+  width: 100%;
+  border-radius: 3px;
+  background-color: #fff;
+  border: solid 1px #e3e3e3;
+  padding: 10px;
+  box-sizing: border-box;
+  display: block;
+
+  &:disabled {
+    background: #eee;
+  }
+}
+
+input {
+  padding: 5px;
+}
