@@ -15,22 +15,19 @@ class IssueCommentListItem extends Component {
   }
 
   onClickEdit() {
-    this.setState({ isEditing: !this.state.isEditing })
+    // TODO: implement
   }
 
   onClickCancel() {
-    this.setState({ isEditing: false })
+    // TODO: implement
   }
 
   onClickSave() {
-    this.setState({ isEditing: false })
-    const newComment = this.props.comment.set('content', this.state.editingContent)
-    this.props.onClickSave(newComment)
+    // TODO: implement
   }
 
   onClickDelete() {
-    console.log("onclickdelete")
-    this.props.onClickDelete(this.props.comment)
+    // TODO: implement
   }
 
   onChangeContent(e) {
