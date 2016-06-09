@@ -32,27 +32,19 @@ class IssueDetailHeader extends Component {
   }
 
   onAssigneeSelected(user, e) {
-    const newIssue = this.props.issue.set('assignee', user)
-    this.props.onAssigneeSelected(newIssue)
+    // TODO: implement
   }
 
   onLabelSelected(label, e) {
-    var labels = this.props.issue.labels
-    if (this.isSelectedLabel(label)) {
-      labels = labels.filter((l) => l.id !== label.id)
-    } else {
-      labels = labels.push(label)
-    }
-    const newIssue = this.props.issue.set('labels', labels)
-    this.props.onLabelsSelected(newIssue)
+    // TODO: implement
   }
 
   onChangeShowUsersModal(show) {
-    this.props.onChangeShowUsersModal(show)
+    // TODO: implement
   }
 
   onChangeShowLabelsModal(show) {
-    this.props.onChangeShowLabelsModal(show)
+    // TODO: implement
   }
 
   render() {
@@ -109,53 +101,11 @@ class IssueDetailHeader extends Component {
             {
               issue.assignee.id ? (issue.assignee.name) : ("No Assignee")
             }
-            <Modal
-              isOpen={issueDetailManager.showUsersModal}
-            >
-              <ul>
-                <li
-                  onClick={this.onChangeShowUsersModal.bind(this, false)}
-                >close</li>
-                {
-                  issueManager.users.map((user) => {
-                    return (
-                      <li
-                        key={user.id}
-                        onClick={this.onAssigneeSelected.bind(this, user)}
-                      >{user.name}
-                        { this.isSelectedUser(user) ? <span> selected!</span> : (null)}
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-            </Modal>
           </div>
           <div styleName="items"
                onClick={this.onChangeShowLabelsModal.bind(this, true)}
           >
             {issue.labels.size > 0 ? issue.labels.map((label) => (<span>{label.name}</span>)) : ("No Labels")}
-            <Modal
-              isOpen={issueDetailManager.showLabelsModal}
-            >
-              <ul>
-                <li
-                  onClick={this.onChangeShowLabelsModal.bind(this, false)}
-                >close</li>
-                {
-                  issueManager.labels.map((label) => {
-                    return (
-                      <li
-                        key={label.id}
-                        onClick={this.onLabelSelected.bind(this, label)}
-                      >{label.name}
-                        { this.isSelectedLabel(label) ? <span> selected!</span> : (null)}
-                      </li>
-                    )
-                  })
-                }
-              </ul>
-            </Modal>
           </div>
         </div>
         <div styleName="assign-label-wrapper">

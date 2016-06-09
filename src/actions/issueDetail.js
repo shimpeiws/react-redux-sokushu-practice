@@ -187,15 +187,9 @@ export function updateIssue(issueDetail) {
 }
 
 export function setShowUsersModal(show) {
-  return {
-    type: Actions.SET_SHOW_USERS_MODAL,
-    show,
-  }
+  // TODO: implement
 }
 
 export function setShowLabelsModal(show) {
-  return {
-    type: Actions.SET_SHOW_LABELS_MODAL,
-    show,
-  }
+  // TODO: implement
 }

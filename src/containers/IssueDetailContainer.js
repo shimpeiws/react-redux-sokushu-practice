@@ -54,19 +54,19 @@ class IssueDetailContainer extends Component {
   }
 
   onAssigneeSelected(issue) {
-    this.props.updateIssue(issue)
+    // TODO: implement
   }
 
   onLabelsSelected(issue) {
-    this.props.updateIssue(issue)
+    // TODO: implement
   }
 
   onChangeShowUsersModal(show) {
-    this.props.setShowUsersModal(show)
+    // TODO: implement
   }
 
   onChangeShowLabelsModal(show) {
-    this.props.setShowLabelsModal(show)
+    // TODO: implement
   }
 
   render() {
