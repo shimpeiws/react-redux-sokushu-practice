@@ -1,8 +1,9 @@
 import React, {Component, PropTypes} from 'react'
 import CSSModules from 'react-css-modules'
-import Modal from 'react-modal'
 
 import { STATE } from './../lib/records/Issue'
+
+import Modal from './SelectModal'
 
 import styles from './IssueDetailHeader.scss'
 

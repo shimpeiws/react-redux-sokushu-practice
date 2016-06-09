@@ -87,3 +87,21 @@
   color: DimGray;
   margin-top: 5px;
 }
+
+.modal-item {
+  text-decoration: none;
+  list-style: none;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.modal-item-check {
+  margin-left: 8px;
+  color: red;
+}
+
+.modal-close-btn {
+  text-align: right;
+  cursor: pointer;
+  margin: 0 16px;
+}

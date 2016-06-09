@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react'
 import { Link } from 'react-router'
 import CSSModules from 'react-css-modules'
-import Modal from 'react-modal'
+
+import Modal from './SelectModal'
 
 import styles from './IssueListHeader.scss'
 
@@ -59,17 +60,19 @@ class IssueListHeader extends Component {
             isOpen={showAssigneeModal}
           >
             <ul>
-              <li
+              <div
+                styleName="modal-close-btn"
                 onClick={this.onChangeAssigneeModal.bind(this, false)}
-              >close</li>
+              >close</div>
               {
                 issueManager.users.map((user) => {
                   return (
                     <li
                       key={user.id}
+                      styleName="modal-item"
                       onClick={this.onChangeAssigneeFilter.bind(this, user)}
                     >{user.name}
-                      { this.isAssigneeFilter(user) ? <span> selected!</span> : (null)}
+                      { this.isAssigneeFilter(user) ? <i styleName="modal-item-check" className="fa fa-check-circle-o" /> : (null)}
                     </li>
                   )
                 })
@@ -83,17 +86,19 @@ class IssueListHeader extends Component {
             isOpen={showLabelModal}
           >
             <ul>
-              <li
+              <div
+                styleName="modal-close-btn"
                 onClick={this.onChangeLabelModal.bind(this, false)}
-              >close</li>
+              >close</div>
               {
                 issueManager.labels.map((label) => {
                   return (
                     <li
                       key={label.id}
+                      styleName="modal-item"
                       onClick={this.onChangeLabelFilter.bind(this, label)}
                     >{label.name}
-                      { this.isLabelFilter(label) ? <span> selected!</span> : (null)}
+                      { this.isLabelFilter(label) ? <i styleName="modal-item-check" className="fa fa-check-circle-o" /> : (null)}
                     </li>
                   )
                 })
