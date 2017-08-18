@@ -1,26 +1,26 @@
-import React, {Component, PropTypes} from 'react'
-import { Link } from 'react-router'
-import CSSModules from 'react-css-modules'
+import React, { Component, PropTypes } from "react";
+import { Link } from "react-router";
+import CSSModules from "react-css-modules";
 
-import Modal from './SelectModal'
+import Modal from "./SelectModal";
 
-import styles from './IssueListHeader.scss'
+import styles from "./IssueListHeader.scss";
 
 class IssueListHeader extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       showAssigneeModal: false,
-      showLabelModal: false,
-    }
+      showLabelModal: false
+    };
   }
 
   isAssigneeFilter(user) {
-    return user.id === parseInt(this.props.userFilterId)
+    return user.id === parseInt(this.props.userFilterId);
   }
 
   isLabelFilter(label) {
-    return label.id === parseInt(this.props.labelFilterId)
+    return label.id === parseInt(this.props.labelFilterId);
   }
 
   onChangeAssigneeFilter(user) {
@@ -33,19 +33,19 @@ class IssueListHeader extends Component {
 
   onChangeAssigneeModal(show) {
     this.setState({
-      showAssigneeModal: show,
-    })
+      showAssigneeModal: show
+    });
   }
 
   onChangeLabelModal(show) {
     this.setState({
-      showLabelModal: show,
-    })
+      showLabelModal: show
+    });
   }
 
   render() {
-    const {issueManager} = this.props
-    const {showAssigneeModal, showLabelModal} = this.state
+    const { issueManager } = this.props;
+    const { showAssigneeModal, showLabelModal } = this.state;
     return (
       <div styleName="base">
         <div styleName="left">
@@ -53,64 +53,78 @@ class IssueListHeader extends Component {
           <span styleName="item" onClick={this.props.onClickClose}>Close</span>
         </div>
         <div styleName="right">
-          <span styleName="item"
-                onClick={this.onChangeAssigneeModal.bind(this, true)}
-          >Assignee</span>
-          <Modal
-            isOpen={showAssigneeModal}
+          <span
+            styleName="item"
+            onClick={this.onChangeAssigneeModal.bind(this, true)}
           >
+            Assignee
+          </span>
+          <Modal isOpen={showAssigneeModal}>
             <ul>
               <div
                 styleName="modal-close-btn"
                 onClick={this.onChangeAssigneeModal.bind(this, false)}
-              >close</div>
-              {
-                issueManager.users.map((user) => {
-                  return (
-                    <li
-                      key={user.id}
-                      styleName="modal-item"
-                      onClick={this.onChangeAssigneeFilter.bind(this, user)}
-                    >{user.name}
-                      { this.isAssigneeFilter(user) ? <i styleName="modal-item-check" className="fa fa-check-circle-o" /> : (null)}
-                    </li>
-                  )
-                })
-              }
+              >
+                close
+              </div>
+              {issueManager.users.map(user => {
+                return (
+                  <li
+                    key={user.id}
+                    styleName="modal-item"
+                    onClick={this.onChangeAssigneeFilter.bind(this, user)}
+                  >
+                    {user.name}
+                    {this.isAssigneeFilter(user)
+                      ? <i
+                          styleName="modal-item-check"
+                          className="fa fa-check-circle-o"
+                        />
+                      : null}
+                  </li>
+                );
+              })}
             </ul>
           </Modal>
-          <span styleName="item"
-                onClick={this.onChangeLabelModal.bind(this, true)}
-          >Label</span>
-          <Modal
-            isOpen={showLabelModal}
+          <span
+            styleName="item"
+            onClick={this.onChangeLabelModal.bind(this, true)}
           >
+            Label
+          </span>
+          <Modal isOpen={showLabelModal}>
             <ul>
               <div
                 styleName="modal-close-btn"
                 onClick={this.onChangeLabelModal.bind(this, false)}
-              >close</div>
-              {
-                issueManager.labels.map((label) => {
-                  return (
-                    <li
-                      key={label.id}
-                      styleName="modal-item"
-                      onClick={this.onChangeLabelFilter.bind(this, label)}
-                    >{label.name}
-                      { this.isLabelFilter(label) ? <i styleName="modal-item-check" className="fa fa-check-circle-o" /> : (null)}
-                    </li>
-                  )
-                })
-              }
+              >
+                close
+              </div>
+              {issueManager.labels.map(label => {
+                return (
+                  <li
+                    key={label.id}
+                    styleName="modal-item"
+                    onClick={this.onChangeLabelFilter.bind(this, label)}
+                  >
+                    {label.name}
+                    {this.isLabelFilter(label)
+                      ? <i
+                          styleName="modal-item-check"
+                          className="fa fa-check-circle-o"
+                        />
+                      : null}
+                  </li>
+                );
+              })}
             </ul>
           </Modal>
           <span styleName="item">Sort</span>
           <span styleName="item"><Link to="/new">Create Issue</Link></span>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default CSSModules(IssueListHeader, styles)
+export default CSSModules(IssueListHeader, styles);
