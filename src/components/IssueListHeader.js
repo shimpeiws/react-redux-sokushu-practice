@@ -72,7 +72,7 @@ class IssueListHeader extends Component {
                   <li
                     key={user.id}
                     styleName="modal-item"
-                    onClick={this.onChangeAssigneeFilter.bind(this, user)}
+                    onClick={this.props.onChangeAssigneeFilter.bind(this, user)}
                   >
                     {user.name}
                     {this.isAssigneeFilter(user)
@@ -105,7 +105,7 @@ class IssueListHeader extends Component {
                   <li
                     key={label.id}
                     styleName="modal-item"
-                    onClick={this.onChangeLabelFilter.bind(this, label)}
+                    onClick={this.props.onChangeLabelFilter.bind(this, label)}
                   >
                     {label.name}
                     {this.isLabelFilter(label)
